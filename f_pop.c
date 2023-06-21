@@ -20,7 +20,8 @@ void f_pop(stack_t **head, unsigned int line_number)
 	}
 
 	*head = (*head)->next;
-	(*head)->prev = NULL;
+	if (*head != NULL)
+		(*head)->prev = NULL;
 	free(node);
 	(void)line_number;
 }
