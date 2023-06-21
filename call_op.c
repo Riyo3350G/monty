@@ -43,6 +43,7 @@ void exec_op(char *opcode, stack_t **stack, unsigned int line_number)
 		{"sub", f_sub},
 		{"div", f_div},
 		{"mul", f_mul},
+		{"mod", f_mod},
 		{NULL, NULL}
 	};
 
