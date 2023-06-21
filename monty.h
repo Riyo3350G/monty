@@ -68,5 +68,6 @@ void exec_op(char *opcode, stack_t **stack, unsigned int line_number);
 void call_op(stack_t **stack);
 void free_stack(stack_t *stack);
 void f_add(stack_t **head, unsigned int line_num);
+void f_nop(stack_t **h, unsigned int line_num);
 
 #endif
