@@ -1,12 +1,18 @@
-#include <stdio.h>
 #include "monty.h"
 
 global_t global;
 
+/**
+ * main - Entry point of the Monty interpreter
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line argument strings
+ *
+ * Return: On succes (0).
+ */
 int main(int argc, char *argv[])
 {
 	stack_t *node = NULL;
-	
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -25,5 +31,5 @@ int main(int argc, char *argv[])
 	fclose(global.file);
 	free(global.line);
 	free_stack(node);
-	exit(EXIT_SUCCESS);
+	return (0);
 }

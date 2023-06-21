@@ -10,6 +10,14 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
+/**
+ * struct global_s - Global variables
+ * @arg: The current argument
+ * @file: File pointer
+ * @line: Line buffer
+ *
+ * Description: Structure to hold global variables used in the program
+ */
 typedef struct global_s
 {
 	char *arg;

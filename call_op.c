@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * call_op - Call operations based on bytecodes
+ * @stack: Pointer to the stack
+ *
+ * Return: void.
+ */
 void call_op(stack_t **stack)
 {
 	char *opcode = NULL;
@@ -16,16 +22,24 @@ void call_op(stack_t **stack)
 	}
 }
 
+/**
+ * exec_op - Execute operation based on opcode
+ * @opcode: Opcode to be executed
+ * @stack: Pointer to the stack
+ * @line_number: Line number in the bytecode file
+ *
+ * Return: void.
+ */
 void exec_op(char *opcode, stack_t **stack, unsigned int line_number)
 {
-	instruction_t inst[] = { 
+	instruction_t inst[] = {
 		{"push", f_push},
 		{"pall", f_pall},
 		{NULL, NULL}
 	};
-	
+
 	int i;
-	
+
 	for (i = 0; inst[i].opcode != NULL; i++)
 	{
 		if (strcmp(inst[i].opcode, opcode) == 0)
@@ -34,7 +48,7 @@ void exec_op(char *opcode, stack_t **stack, unsigned int line_number)
 			return;
 		}
 	}
-	
+
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 	free_stack(*stack);
 	fclose(global.file);

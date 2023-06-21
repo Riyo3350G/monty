@@ -1,10 +1,17 @@
 #include "monty.h"
 
+/**
+ * f_pall - Print all values in the stack
+ * @head: Pointer to the head of the stack
+ * @line_number: Line number in the bytecode file
+ *
+ * Return: void.
+ */
 void f_pall(stack_t **head, unsigned int line_number)
 {
 	stack_t *node;
-	node = *head;
 
+	node = *head;
 	while (node != NULL)
 	{
 		printf("%d\n", node->n);

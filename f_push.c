@@ -1,10 +1,17 @@
 #include "monty.h"
 
+/**
+ * f_push - Push a value into the stack
+ * @head: Pointer to the head of the stack
+ * @line_number: Line number in the bytecode file
+ *
+ * Return: void.
+ */
 void f_push(stack_t **head, unsigned int line_number)
 {
 	stack_t *node;
-	node = malloc(sizeof(stack_t));
 
+	node = malloc(sizeof(stack_t));
 	if (global.arg == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
@@ -37,5 +44,4 @@ void f_push(stack_t **head, unsigned int line_number)
 		node->next = *head;
 		(*head) = node;
 	}
-
 }
