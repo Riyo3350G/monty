@@ -40,6 +40,7 @@ void exec_op(char *opcode, stack_t **stack, unsigned int line_number)
 		{"add", f_add},
 		{"swap", f_swap},
 		{"nop", f_nop},
+		{"sub", f_sub},
 		{NULL, NULL}
 	};
 
