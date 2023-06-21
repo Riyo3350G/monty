@@ -12,7 +12,7 @@ void f_push(stack_t **head, unsigned int line_number)
 	stack_t *node;
 
 	node = malloc(sizeof(stack_t));
-	if (global.arg[0] == '\0' || atoi(global.arg) == 0)
+	if (global.arg == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(*head);
@@ -34,7 +34,7 @@ void f_push(stack_t **head, unsigned int line_number)
 
 	if (*head == NULL)
 	{
-		*head = node;
+		(*head) = node;
 		node->prev = NULL;
 		node->next = NULL;
 	}
@@ -42,6 +42,6 @@ void f_push(stack_t **head, unsigned int line_number)
 	{
 		(*head)->prev = node;
 		node->next = *head;
-		*head = node;
+		(*head) = node;
 	}
 }
