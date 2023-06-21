@@ -5,9 +5,9 @@
   *@line_num: line number
   *Return: Nothing
  */
-void f_nop(stack_t **h, unsigned int line_num)
+void f_nop(stack_t **head, unsigned int line_number)
 {
-	(void) h;
-	(void) line_num;
+	(void) head;
+	(void) line_number;
 }
 
