@@ -54,12 +54,12 @@ void f_push(stack_t **head, unsigned int line_number)
  */
 int _isdigit(char *c)
 {
-        if (*c >= 48 && *c <= 57)
-        {
-                return (1);
-        }
-        else
-        {
-                return (0);
-        }
+	if (*c >= 48 && *c <= 57)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
