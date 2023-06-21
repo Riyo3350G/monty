@@ -1,5 +1,5 @@
 #include "monty.h"
-global_t global = {NULL, NULL, NULL, 0};
+global_t global;
 /**
  * main - Entry point of the Monty interpreter
  * @argc: Number of command-line arguments
@@ -29,5 +29,5 @@ int main(int argc, char *argv[])
 	fclose(global.file);
 	free(global.line);
 	free_stack(node);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
