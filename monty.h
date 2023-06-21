@@ -23,7 +23,6 @@ typedef struct global_s
 	char *arg;
 	FILE *file;
 	char *line;
-	int n;
 } global_t;
 
 extern global_t global;
