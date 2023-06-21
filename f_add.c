@@ -5,7 +5,7 @@
  * @line_num: line number
  * Return: Nothing
 */
-void f_add(stack_t **h, unsigned int idx)
+void f_add(stack_t **h, unsigned int line_num)
 {
 	stack_t *temp;
 	int count = 0;
@@ -19,7 +19,7 @@ void f_add(stack_t **h, unsigned int idx)
 	}
 	if (count < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", idx);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
 		fclose(global.file);
 		free(global.line);
 		free_stack(*h);

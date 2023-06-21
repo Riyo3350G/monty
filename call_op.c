@@ -37,11 +37,8 @@ void exec_op(char *opcode, stack_t **stack, unsigned int line_number)
 		{"pall", f_pall},
 		{"pint", f_pint},
 		{"pop", f_pop},
-<<<<<<< HEAD
 		{"add", f_add},
-=======
 		{"swap", f_swap},
->>>>>>> 5b8c0a843431d5ab6bb976adb18f3fdc95aeecec
 		{NULL, NULL}
 	};
 
