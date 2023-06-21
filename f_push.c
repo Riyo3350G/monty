@@ -11,7 +11,6 @@ void f_push(stack_t **head, unsigned int line_number)
 {
 	stack_t *node;
 
-	node = malloc(sizeof(stack_t));
 	if (global.arg == NULL || !_isdigit(global.arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
@@ -20,6 +19,8 @@ void f_push(stack_t **head, unsigned int line_number)
 		free(global.line);
 		exit(EXIT_FAILURE);
 	}
+
+	node = malloc(sizeof(stack_t));
 
 	if (node == NULL)
 	{
