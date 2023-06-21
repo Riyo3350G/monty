@@ -23,6 +23,7 @@ typedef struct global_s
 	char *arg;
 	FILE *file;
 	char *line;
+	int n;
 } global_t;
 
 extern global_t global;
@@ -65,5 +66,6 @@ void f_pop(stack_t **head, unsigned int line_number);
 void exec_op(char *opcode, stack_t **stack, unsigned int line_number);
 void call_op(stack_t **stack);
 void free_stack(stack_t *stack);
+void f_add(stack_t **h, unsigned int idx);
 
 #endif
