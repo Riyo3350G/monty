@@ -62,6 +62,7 @@ void f_push(stack_t **head, unsigned int line_number);
 void f_pall(stack_t **head, unsigned int line_number);
 void f_pint(stack_t **head, unsigned int line_number);
 void f_pop(stack_t **head, unsigned int line_number);
+void f_swap(stack_t **head, unsigned int line_number);
 
 void exec_op(char *opcode, stack_t **stack, unsigned int line_number);
 void call_op(stack_t **stack);
