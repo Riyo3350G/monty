@@ -14,7 +14,7 @@ void f_pall(stack_t **head, unsigned int line_number)
 	node = *head;
 	while (node != NULL)
 	{
-		fprintf(stdout,"%d\n", node->n);
+		fprintf(stdout, "%d\n", node->n);
 		fflush(stdout);
 		node = node->next;
 	}

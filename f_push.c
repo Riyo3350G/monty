@@ -57,12 +57,19 @@ void f_push(stack_t **head, unsigned int line_number)
  */
 int _isdigit(char *c)
 {
-	if (*c >= 48 && *c <= 57)
-	{
-		return (1);
-	}
-	else
-	{
+	if (c == NULL || *c == '\0')
 		return (0);
+
+	if (*c == '-' || *c == '+')
+		c++;
+
+	while (*c != '\0')
+	{
+		if (*c < '0' || *c > '9')
+			return (0);
+
+		c++;
 	}
+
+	return (1);
 }
