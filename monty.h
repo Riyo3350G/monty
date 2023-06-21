@@ -74,4 +74,6 @@ void exec_op(char *opcode, stack_t **stack, unsigned int line_number);
 void call_op(stack_t **stack);
 void free_stack(stack_t *stack);
 
+int _isdigit(char *c);
+
 #endif

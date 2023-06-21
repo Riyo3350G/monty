@@ -12,7 +12,7 @@ void f_push(stack_t **head, unsigned int line_number)
 	stack_t *node;
 
 	node = malloc(sizeof(stack_t));
-	if (global.arg == NULL)
+	if (global.arg == NULL || !_isdigit(global.arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(*head);
@@ -44,4 +44,22 @@ void f_push(stack_t **head, unsigned int line_number)
 		node->next = *head;
 		(*head) = node;
 	}
+}
+
+
+/**
+ * _isdigit - checks if parameter is a number between 0 to 9.
+ * @c: character.
+ * Return: 1 if is a number (0 to 9), 0 in other case.
+ */
+int _isdigit(char *c)
+{
+        if (*c >= 48 && *c <= 57)
+        {
+                return (1);
+        }
+        else
+        {
+                return (0);
+        }
 }
