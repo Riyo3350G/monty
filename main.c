@@ -1,7 +1,5 @@
 #include "monty.h"
-
-global_t global;
-
+global_t global = {NULL, NULL, NULL};
 /**
  * main - Entry point of the Monty interpreter
  * @argc: Number of command-line arguments
