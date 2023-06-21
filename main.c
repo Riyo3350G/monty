@@ -1,29 +1,52 @@
-#include <stdio.h>
 #include "monty.h"
 
-global_t global;
-
-int main(int argc, char *argv[])
+/**
+* main - monty code interpreter
+* @argc: number of arguments
+* @argv: monty file location
+* Return: 0 on success
+*/
+int main(int argc, char **argv)
 {
-	stack_t *node = NULL;
-	
+	FILE *file;
+	size_t n = 0;
+	ssize_t read = 1;
+	stack_t *stack = NULL;
+	char *file_data;
+	unsigned int line_num = 0;
+
+	/* check arguments count */
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
+		printf("ERROR\n");
 		exit(EXIT_FAILURE);
 	}
 
-	global.file = fopen(argv[1], "r");
+	/* open and read file data */
+	file = fopen(argv[1], "r");
+	box.file = file;
 
-	if (global.file == NULL)
+	if (file == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
-	call_op(&node);
-	fclose(global.file);
-	free(global.line);
-	free_stack(node);
-	exit(EXIT_SUCCESS);
+	while (read > 0)
+	{
+		file_data = NULL;
+		read = getline(&file_data, &n, file);
+		box.data = file_data;
+		line_num++;
+		if (read > 0)
+		{
+			exec(file_data, &stack, line_num, file);
+		}
+		free(file_data);
+	}
+
+	free_stack(stack);
+	fclose(file);
+
+	return (0);
 }

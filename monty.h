@@ -1,23 +1,29 @@
-#ifndef MAIN_H_
-#define MAIN_H_
-#define  _GNU_SOURCE
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-#include <ctype.h>
 #include <sys/types.h>
-#include <fcntl.h>
 
-typedef struct global_s
+/**
+ * struct fileData_s - file data
+ * @file: point to the file
+ * @file_name: file name
+ * @content: file content
+ * @n: number
+*/
+struct box_s
 {
 	char *arg;
 	FILE *file;
-	char *line;
-} global_t;
+	char *data;
+	int n;
+};
 
-extern global_t global;
+typedef struct box_s box_t;
+extern box_t box;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -50,9 +56,7 @@ typedef struct instruction_s
 
 void f_push(stack_t **head, unsigned int line_number);
 void f_pall(stack_t **head, unsigned int line_number);
-
-void exec_op(char *opcode, stack_t **stack, unsigned int line_number);
-void call_op(stack_t **stack);
-void free_stack(stack_t *stack);
+int exec(char *content, stack_t **head, unsigned int counter, FILE *file);
+void free_stack(stack_t *h);
 
 #endif

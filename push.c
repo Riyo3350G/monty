@@ -5,12 +5,12 @@ void f_push(stack_t **head, unsigned int line_number)
 	stack_t *node;
 	node = malloc(sizeof(stack_t));
 
-	if (global.arg == NULL)
+	if (box.arg == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(*head);
-		fclose(global.file);
-		free(global.line);
+		fclose(box.file);
+		free(box.data);
 		exit(EXIT_FAILURE);
 	}
 
@@ -18,12 +18,12 @@ void f_push(stack_t **head, unsigned int line_number)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free_stack(*head);
-		fclose(global.file);
-		free(global.line);
+		fclose(box.file);
+		free(box.data);
 		exit(EXIT_FAILURE);
 	}
 
-	node->n = atoi(global.arg);
+	node->n = atoi(box.arg);
 
 	if (*head == NULL)
 	{
