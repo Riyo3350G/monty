@@ -16,8 +16,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fflush(stdout);
-		fprintf(stderr, "USAGE: monty file\n");
+		printf("Usage: monty file");
 		exit(EXIT_FAILURE);
 	}
 
