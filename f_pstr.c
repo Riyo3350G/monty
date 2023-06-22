@@ -15,8 +15,8 @@ void f_pstr(stack_t **head, unsigned int line_number)
 	{
 		if (node->n >= 0 && node->n <= 127)
 		{
-			printf("%c", current->n);
-			current = current->next;
+			printf("%c", node->n);
+			node = node->next;
 		}
 	}
 
