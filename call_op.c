@@ -19,7 +19,7 @@ void call_op(stack_t **stack)
 		opcode = strtok(global.line, " \n\t\r\a");
 		global.arg = strtok(NULL, " \n\t");
 		if (opcode == NULL || *opcode == '#')
-			return (0);
+			continue;
 		exec_op(opcode, stack, line_number);
 	}
 }
