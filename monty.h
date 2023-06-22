@@ -15,6 +15,7 @@
  * @arg: The current argument
  * @file: File pointer
  * @line: Line buffer
+ * @n: data
  *
  * Description: Structure to hold global variables used in the program
  */
