@@ -15,6 +15,9 @@ void f_push(stack_t **head, unsigned int line_number)
 	{
 		fflush(stdout);
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free_stack(*head);
+		fclose(global.file);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -24,6 +27,9 @@ void f_push(stack_t **head, unsigned int line_number)
 	{
 		fflush(stdout);
 		fprintf(stderr, "Error: malloc failed\n");
+		free_stack(*head);
+		fclose(global.file);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 
