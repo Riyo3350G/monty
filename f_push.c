@@ -13,8 +13,8 @@ void f_push(stack_t **head, unsigned int line_number)
 
 	if (global.arg == NULL || !_isdigit(global.arg))
 	{
+		fflush(stdout);
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		fflush(stderr);
 		free_stack(*head);
 		fclose(global.file);
 		free(global.line);
@@ -25,8 +25,8 @@ void f_push(stack_t **head, unsigned int line_number)
 
 	if (node == NULL)
 	{
+		fflush(stdout);
 		fprintf(stderr, "Error: malloc failed\n");
-		fflush(stderr);
 		free_stack(*head);
 		fclose(global.file);
 		free(global.line);

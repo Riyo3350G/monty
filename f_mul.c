@@ -21,6 +21,7 @@ void f_mul(stack_t **head, unsigned int line_number)
 	}
 	if (len < 2)
 	{
+		fflush(stdout);
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		fclose(global.file);
 		free(global.line);

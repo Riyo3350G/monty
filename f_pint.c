@@ -9,6 +9,7 @@ void f_pint(stack_t **head, unsigned int line_number)
 {
 	if (*head == NULL)
 	{
+		fflush(stdout);
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		fclose(global.file);
 		free(global.line);
