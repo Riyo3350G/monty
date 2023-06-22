@@ -1,5 +1,8 @@
 #include "monty.h"
-global_t global;
+
+void f_nop(stack_t **head, unsigned int line_number);
+global_t global = {NULL, NULL, NULL, 0};
+
 /**
  * main - Entry point of the Monty interpreter
  * @argc: Number of command-line arguments
@@ -30,4 +33,16 @@ int main(int argc, char *argv[])
 	free(global.line);
 	free_stack(node);
 	exit(EXIT_SUCCESS);
+}
+
+/**
+ * f_nop - do nothing
+ * @head: head
+ * @line_number: line number
+ * Return: void.
+ */
+void f_nop(stack_t **head, unsigned int line_number)
+{
+	(void) head;
+	(void) line_number;
 }
