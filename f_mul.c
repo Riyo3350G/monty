@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * f_div - Divides the second top element of the stack by the top element.
+ * f_mul - Multiply the second top element of the stack by the top element.
  * @head: Double pointer to the head of the stack.
  * @line_number: Line number in the input file.
  *
