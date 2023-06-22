@@ -18,6 +18,9 @@ void f_pstr(stack_t **head, unsigned int line_number)
 			printf("%c", node->n);
 			node = node->next;
 		}
+		if (node == NULL || node->n == 0 || !(node->n >= 0 && node->n <= 127))
+			break;
+
 	}
 
 	printf("\n");
